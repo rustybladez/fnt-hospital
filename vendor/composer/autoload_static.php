@@ -21,6 +21,8 @@ class ComposerStaticInit0a9de2228333ea5a4dbc158c15b3c615
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
         'f18cc91337d49233e5754e93f3ed9ec3' => __DIR__ . '/..' . '/laravelcollective/html/src/helpers.php',
+        '04379a029f030eb949986bbf5316863c' => __DIR__ . '/../..' . '/app/Helpers/AgeHelper.php',
+        '8adec7005605b0f4ec03ded0387fd541' => __DIR__ . '/../..' . '/app/Helpers/NumberToWordConverter.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -377,9 +379,11 @@ class ComposerStaticInit0a9de2228333ea5a4dbc158c15b3c615
     );
 
     public static $classMap = array (
+        'AddDoctorNameToInvoicesTable' => __DIR__ . '/../..' . '/database/migrations/2024_05_28_225433_add_doctor_name_to_invoices_table.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Exceptions\\PermissionDenied' => __DIR__ . '/../..' . '/app/Exceptions/PermissionDenied.php',
+        'App\\Helpers\\AgeHelper' => __DIR__ . '/../..' . '/app/Helpers/AgeHelper.php',
         'App\\Http\\Controllers\\AccountController' => __DIR__ . '/../..' . '/app/Http/Controllers/AccountController.php',
         'App\\Http\\Controllers\\AppointmentController' => __DIR__ . '/../..' . '/app/Http/Controllers/AppointmentController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',

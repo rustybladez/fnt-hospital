@@ -71,8 +71,8 @@
 						<tfoot>
 							<tr>
 								<th colspan="2"><b>Total:</b></th>
-								<th><b>${{$total["doctor_fee"]}}<b></th>
-								<th><b>${{$total['opd_charge']}}</th>
+								<th><b>Tk {{$total["doctor_fee"]}}<b></th>
+								<th><b>Tk {{$total['opd_charge']}}</th>
 								<th></th>
 								<th></th>
 
@@ -84,8 +84,8 @@
 						<tr>
 							<td>{{$invoice->invoice->invoice_no}}</td>
 							<td>{{$invoice->opd_name}}</td>
-							<td>${{$invoice->doctor_fee}}</td>
-							<td>${{$invoice->opd_charge}}</td>
+							<td>Tk {{$invoice->doctor_fee}}</td>
+							<td>Tk {{$invoice->opd_charge}}</td>
 							<td>{{$invoice->invoice->user->name}}</td>
 							<td>{{$invoice->created_at}}</td>
 						</tr>
@@ -94,8 +94,8 @@
 						<tr>
 							<td><b>Total:</b></td>
 							<td></td>
-							<td>${{$total['doctor_fee']}}</b></td>
-							<td>${{$total['opd_charge']}}</b></td>
+							<td>Tk {{$total['doctor_fee']}}</b></td>
+							<td>Tk {{$total['opd_charge']}}</b></td>
 							<td></td>
 							<td></td>
 						</tr>

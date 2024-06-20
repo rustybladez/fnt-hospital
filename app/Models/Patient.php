@@ -3,16 +3,18 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Patient extends Model
 {
-
     
 	protected $fillable = 
 	[
         'first_name', 'middle_name', 'last_name','email', 'age', 'phone', 'gender', 'birth_date', 'country', 'state', 'district' , 'location' , 'occupation' ,
         'description' , 'relative_name' , 'relative_phone' , 'marital_status', 'blood_group',
     ];
+
+    protected $dates = ['birth_date'];
 
     public function appointments()
     {

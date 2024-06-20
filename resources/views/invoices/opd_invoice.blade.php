@@ -40,7 +40,7 @@
 						<div class="col-md-6 form-group">
 							<label></label>
 							<select class="form-control select" name="doctor_id" id="doctor_id">
-							<option>Select Doctor:</option>
+							<option>Select Doctor: </option>
 							@foreach($doctors as $doctor)
 			  				<option value="{{$doctor->id}}">{{$doctor->employee->first_name}} {{$doctor->employee->last_name}}</option>
 			 		 		@endforeach
@@ -49,7 +49,7 @@
 	 		 			<div class="col-md-6 form-group">
 							<label></label>
 							<select class="form-control select" name="patient_id" id="patient_id" required>
-							<option>Select Patient:</option>
+							<option>Select Patient: </option>
 							@foreach($patients as $patient)
 	  						<option value="{{$patient->id}}">ID: {{$patient->id}}. {{$patient->first_name}} {{$patient->last_name}}</option>
 	 		 				@endforeach
@@ -65,18 +65,18 @@
 								</select>
 							</div>
 							<div class=" col-md-3 form-group">
-							<label>Invoice No:</label>
+							<label>Invoice No: </label>
 	                        <input type="text" class="form-control" name="invoice_no" value="{{$setting->invoice_prefix}}{{$invoice_no}}" readonly>
 	                        </div>
 	                        <div id="payment" style="display: none;">
 	                       
 		                        <div class="col-md-3 form-group">
-								<label>Discount :</label>
+								<label>Discount: </label>
 								<input type="number" name="discount"  placeholder="" class="form-control" id="discount"><br>
 								</div>
 								
 		                        <div class="col-md-3 form-group">
-								<label>Cash :</label>
+								<label>Cash: </label>
 								<input type="number" name="cash"  placeholder="" class="form-control" id="cash" required><br>
 								</div>
 							</div>
@@ -188,7 +188,7 @@ $(document).ready(function() {
     		$('#msg').hide();
         	$('#complete').show();
     		$('#comment').show();
-    		$('#tender').html('<strong>Sub Total: $'+ sub_total +'</strong><br><strong>Discount:$'+ discount + '</strong><br><b>------------------------------</b><br><strong>Taxable Amount:' + total+'</strong><br><strong>HST('+ tax+'%): $'+ tax_amount +'</strong><br><b>-----------------------------<b><br><strong>Total: $'+ total_amount +'</strong><br><strong>Cash: $ ' + cash + '</strong><br><strong>Return:$' + tender_amount+ '</strong>');
+    		$('#tender').html('<strong>Sub Total: Tk '+ sub_total +'</strong><br><strong>Discount: Tk '+ discount + '</strong><br><b>------------------------------</b><br><strong>Taxable Amount: ' + total+'</strong><br><strong>HST('+ tax+'%): Tk '+ tax_amount +'</strong><br><b>-----------------------------<b><br><strong>Total: Tk '+ total_amount +'</strong><br><strong>Cash: Tk ' + cash + '</strong><br><strong>Return: TK ' + tender_amount+ '</strong>');
     		$('#tender').show();
     		}  
     	}

@@ -72,14 +72,15 @@ $(document).ready(function() {
 	                        </div>
 	                        <div id="payment" style="display: none;">
 	                        <div class=" col-md-3 form-group">
-								<label>Doctor Reffered:</label>
-								<select name="doctor_id" class="form-control">
-								<option></option>
+								<label>Referred By:</label>
+								<select id="doctorName" name="doctor_id" class="form-control" onchange="getDoctor()">
+								<option>Self</option>
 									@foreach($doctors as $doctor)
 									<option value="{{$doctor->id}}">{{$doctor->employee->first_name}} {{$doctor->employee->last_name}}</option>
 									@endforeach
 								</select>
 							</div>
+							<input type="hidden" id="selectedDoctorName" name="doctor_name">
 	                       
 		                        <div class="col-md-2 form-group">
 								<label>Discount :</label>
@@ -201,7 +202,7 @@ $(document).ready(function() {
 	    		$('#msg').hide();
 	        	$('#complete').show();
 	    		$('#comment').show();
-	    		$('#tender').html('<strong>Sub Total: $'+ sub_total +'</strong><br><strong>Discount:$'+ discount + '</strong><br><b>------------------------------</b><br><strong>Taxable Amount:' + total.toFixed(2)+'</strong><br><strong>HST('+ tax+'%): $'+ tax_amount.toFixed(2) +'</strong><br><b>-----------------------------<b><br><strong>Total: $'+ total_amount.toFixed() +'</strong><br><strong>Cash: $ ' + cash + '</strong><br><strong>Return:$' + tender_amount.toFixed()+ '</strong>');
+	    		$('#tender').html('<strong>Sub Total: Tk '+ sub_total +'</strong><br><strong>Discount: Tk '+ discount +'</strong><br><b>-----------------------------<b><br><strong>Total: Tk '+ total_amount.toFixed() +'</strong><br><strong>Cash: Tk ' + cash + '</strong><br><strong>Return: Tk ' + tender_amount.toFixed()+ '</strong>');
 	    		$('#tender').show();
 	    	}  
     	}
@@ -219,5 +220,11 @@ $(document).ready(function() {
 
 });
    });
+
+   function getDoctor() {
+    var doctorName = $("#doctorName option:selected").text();
+    $("#selectedDoctorName").val(doctorName);
+}
+
     </script>
   		@endsection

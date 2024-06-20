@@ -51,7 +51,7 @@ class EmployeeController extends Controller
         $data = $request->all();
         if($request->type == 'Doctor')
         {
-            $data['first_name'] = 'DR.'.$request->first_name;
+            $data['first_name'] = 'Dr. '.$request->first_name;
         }
         //return $data;
 
@@ -98,7 +98,7 @@ class EmployeeController extends Controller
         }
         if($request->type == 'Doctor')
         {
-            $request['first_name'] = 'DR.'.$request->first_name;
+            $request['first_name'] = 'Dr. '.$request->first_name;
         }
         $employee->update($request->all());
         $departments = Department::get();

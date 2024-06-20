@@ -3,12 +3,12 @@
 	#print {
 		
     margin: auto;
-    width: 70%;
+    width: 100%;
     border: 3px solid green;
     padding: 10px;
 }
 @media print {
-    #printbtn {
+    #btn {
         display :  none;
     }
 }
@@ -23,14 +23,14 @@
 	</div>
 	<div class="col-md-6">
 			<strong>Patient: </strong>{{$invoices->patient->first_name}} {{$invoices->patient->last_name}}<br>
-			<strong>Patient ID: </strong>{{ $setting->patient_prefix}}{{$invoices->patient->id}}<br>
-			<strong>Age:</strong>{{ $invoices->patient->age}}<br>
-			<strong>Sex:</strong>{{$invoices->patient->gender}}<br>
-			<strong>Payment:</strong> {{$invoices->payment_type}}<br>
+			<!-- <strong>Patient ID: </strong>{{ $setting->patient_prefix}}{{$invoices->patient->id}}<br> -->
+			<strong>Age: </strong>{{ $invoices->patient->age}}<br>
+			<strong>Sex: </strong>{{$invoices->patient->gender}}<br>
+			<!-- <strong>Payment: </strong> {{$invoices->payment_type}}<br> -->
 	</div>
 	<div class="col-md-6" align="right" >
 			<strong>Date: </strong>{{$invoices->created_at}}<br>
-			<strong>Invoice#:</strong>{{$invoices->invoice_no}}<br><br>
+			<strong>Invoice#: </strong>{{$invoices->invoice_no}}<br><br>
 			<b>Duplicate Invoice</b>
 	</div>
 	
@@ -51,15 +51,15 @@
 		<tr>
 				<td>{{$i++}}</td>
 				<td>{{$sales->service_name}}</td>
-				<td>${{number_format($sales->amount, 2)}}</td>
-			</tr>
+				<td>Tk {{number_format($sales->amount, 2)}}</td>
+		</tr>
 		@endforeach
 		@elseif($invoices->opd)
 		@foreach($invoices->opd_sales()->get() as $sales)
 		<tr>
 				<td>{{$i++}}</td>
 				<td>{{$sales->opd_name}}</td>
-				<td>${{number_format($sales->opd_charge,2)}}</td>
+				<td>Tk {{number_format($sales->opd_charge,2)}}</td>
 			</tr>
 		@endforeach
 		@else
@@ -67,23 +67,23 @@
 		<tr>
 			<td>{{$i++}}</td>
 			<td>{{$sales->package->name}}</td>
-			<td>${{number_format($sales->package_price, 2)}}</td>
+			<td>Tk {{number_format($sales->package_price, 2)}}</td>
 		</tr>
 		@endforeach
 		@endif
 			
 			<tr>
-				<td></td><td></td><td><strong>Sub Total: </strong>$ {{number_format($invoices->sub_total, 2)}}</td>
+				<td></td><td></td><td><strong>Sub Total: </strong>Tk {{number_format($invoices->sub_total, 2)}}</td>
 			</tr>
 
 			<tr>
-				<td></td><td></td><td><strong>Discount: </strong>$ {{$invoices->discount}}</td>
+				<td></td><td></td><td><strong>Discount: </strong>Tk {{$invoices->discount}}</td>
 			</tr>
+			<!-- <tr>
+				<td></td><td></td><td><strong>HST({{$setting->tax_percent}}%): </strong>Tk {{number_format($invoices->tax_amount,2)}}</td>
+			</tr> -->
 			<tr>
-				<td></td><td></td><td><strong>HST({{$setting->tax_percent}}%): </strong>${{number_format($invoices->tax_amount,2)}}</td>
-			</tr>
-			<tr>
-				<td></td><td></td><td><strong>Total: </strong>${{number_format($invoices->total_amount)}}</td>
+				<td></td><td></td><td><strong>Total: </strong>Tk {{number_format($invoices->total_amount)}}</td>
 			</tr>
 		</tbody>
 		

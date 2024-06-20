@@ -71,7 +71,7 @@
 						<tfoot>
 							<tr>
 								<th colspan="2"><b>Total:</b></th>
-								<th><b>${{$total["total"]}}<b></th>
+								<th><b>Tk {{$total["total"]}}<b></th>
 								<th colspan="4"></th>
 								
 
@@ -83,8 +83,8 @@
 						<tr>
 							<td>{{$invoice->invoice->invoice_no}}</td>
 							<td>{{$invoice->package->name}}</td>
-							<td>${{$invoice->package_price}}</td>
-							<td>${{$invoice->patient->first_name}}</td>
+							<td>Tk {{$invoice->package_price}}</td>
+							<td>Tk {{$invoice->patient->first_name}}</td>
 							<td>{{$invoice->invoice->user->name}}</td>
 							<td>{{$invoice->created_at}}</td>
 						</tr>
@@ -93,7 +93,7 @@
 						<tr>
 							<td><b>Total:</b></td>
 							<td></td>
-							<td>${{$total['total']}}</b></td>
+							<td>Tk {{$total['total']}}</b></td>
 							<td></b></td>
 							<td></td>
 							<td></td>

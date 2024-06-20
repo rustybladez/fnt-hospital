@@ -15,7 +15,7 @@
       	<select name="employee_id" class="form-control" required>
       	<option value="{{$doctor->employee->id}}">{{$doctor->employee->first_name}} {{$doctor->employee->middle_name}} {{$doctor->employee->last_name}}</option>
       	@foreach($employees as $employee)      	
-      	<option value="{{$employee->id}}">DR.{{$employee->first_name}} {{$employee->middle_name}} {{$employee->last_name}}</option>
+      	<option value="{{$employee->id}}">Dr. {{$employee->first_name}} {{$employee->middle_name}} {{$employee->last_name}}</option>
       	@endforeach
       	</select>
       	</div>

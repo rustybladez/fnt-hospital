@@ -55,7 +55,7 @@
 				            <td>{{ $doctor->employee->first_name}} {{$doctor->employee->middle_name}} {{$doctor->employee->last_name}}</td>
 				            <td>{{ $doctor->employee->phone}}</td>
 				            <td>{{$doctor->employee->department->name}}</td>
-				            <td>${{$doctor->fee}}</td>
+				            <td>{{$doctor->fee}}</td>
 				           
 				    		
 				            <td>

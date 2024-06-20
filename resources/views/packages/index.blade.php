@@ -55,7 +55,7 @@
 						    			<li>{{$package_test->test->name}}<a class="btn-sm" id="test_delete" data-id="{{$package_test->id}}"><span class="glyphicon glyphicon-remove"></span></a></li>
 						    		@endforeach
 						    	</td> 
-						    	<td>${{$package->price}}</td>	
+						    	<td>{{$package->price}}</td>	
 								<td>
                            <button id="package_edit" class="btn-sm btn-info" data-edit="{{$package->id}}, {{$package->name}}, {{$package->description}}, {{$package->price}}, {{$package->status}}"><span class="glyphicon glyphicon-edit" ></span>
                             </button>

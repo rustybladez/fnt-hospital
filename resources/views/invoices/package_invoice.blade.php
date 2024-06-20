@@ -73,7 +73,7 @@
 								<input type="number" name="discount"  placeholder="" class="form-control" id="discount"><br>
 								</div>	
 		                        <div class="col-md-3 form-group">
-								<label>Cash :</label>
+								<label>Cash: </label>
 								<input type="number" name="cash"  placeholder="" class="form-control" id="cash" required><br>
 								</div>
 							</div>
@@ -172,7 +172,7 @@ $(document).ready(function() {
         	}
 
         	var total = sub_total - discount;
-        	var tax_amount = total * tax /100;
+        	var tax_amount = total * tax / 100;
         	var total_amount = total + tax_amount;
         	var tender_amount = cash - total_amount;
         	
@@ -186,7 +186,7 @@ $(document).ready(function() {
     		$('#msg').hide();
         	$('#complete').show();
     		$('#comment').show();
-    		$('#tender').html('<strong>Sub Total: $'+ sub_total +'</strong><br><strong>Discount:$'+ discount + '</strong><br><b>------------------------------</b><br><strong>Taxable Amount:' + total+'</strong><br><strong>HST('+ tax+'%): $'+ tax_amount +'</strong><br><b>-----------------------------<b><br><strong>Total: $'+ total_amount +'</strong><br><strong>Cash: $ ' + cash + '</strong><br><strong>Return:$' + tender_amount+ '</strong>');
+    		$('#tender').html('<strong>Sub Total: Tk '+ sub_total +'</strong><br><strong>Discount: Tk '+ discount + '</strong><br><b>------------------------------</b><br><strong>Taxable Amount:' + total+'</strong><br><strong>HST('+ tax+'%): Tk '+ tax_amount +'</strong><br><b>-----------------------------<b><br><strong>Total: Tk '+ total_amount +'</strong><br><strong>Cash: Tk ' + cash + '</strong><br><strong>Return: Tk ' + tender_amount+ '</strong>');
     		$('#tender').show();
     		}  
     	}

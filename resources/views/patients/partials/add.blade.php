@@ -18,7 +18,7 @@
 		</div>
 		<div class=" col-md-4 form-group">
 			<label>Last Name:</label>
-		 	{!! Form::text('last_name', null, array('class' => 'form-control', 'required'=>'required')) !!}
+		 	{!! Form::text('last_name', null, array('class' => 'form-control')) !!}
 		</div>
 		<div class=" col-md-4 form-group">
 			<label>Email:</label>
@@ -30,7 +30,7 @@
 		</div>
 		 <div class=" col-md-4 form-group">
 	        <label>Gender:</label>
-	        <select name="gender" class="form-control" required>
+	        <select name="gender" class="form-control">
 	        <option>Male</option>
 	        <option>Female</option>
 	        <option>Other</option>
@@ -38,7 +38,7 @@
 	    </div>
 	     <div class=" col-md-4 form-group">
 	        <label>Marital Status:</label>
-	        <select name="marital_status" class="form-control" required>
+	        <select name="marital_status" class="form-control">
 	        <option>Married</option>
 	        <option>Single</option>
 	        <option>Other</option>
@@ -64,7 +64,7 @@
 		</div>
 		<div class=" col-md-4 form-group">
 			<label>Age:</label>
-		 	{!! Form::input('number','age' ,null, array('class' => 'form-control','required'=>'required')) !!}
+		 	{!! Form::input('number','age' ,null, array('class' => 'form-control')) !!}
 		</div>
 		<div class=" col-md-4 form-group">
 			<label>Relative Name:</label>
@@ -88,7 +88,7 @@
 		</div>
 		<div class=" col-md-4 form-group">
 			<label>Location:</label>
-			{!! Form::textarea('location', '', array('class' => 'form-control','required'=>'required','size' => '5x3')) !!}
+			{!! Form::textarea('location', '', array('class' => 'form-control','size' => '5x3')) !!}
 		</div>
 		
 		<div class=" col-md-4 form-group">

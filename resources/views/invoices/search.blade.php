@@ -72,10 +72,10 @@
 						<tfoot>
 							<tr>
 								<th><b>Total:</b></th>
-								<th>${{number_format($total['sub_total'], 2)}}</th>
-								<th>${{$total['discount']}}</th>
-								<th>${{number_format($total['tax_amount'], 2)}}</th>
-								<th><b>${{number_format($total['total_amount'])}}<b></th>
+								<th>Tk {{number_format($total['sub_total'], 2)}}</th>
+								<th>Tk {{$total['discount']}}</th>
+								<th>Tk {{number_format($total['tax_amount'], 2)}}</th>
+								<th><b>Tk {{number_format($total['total_amount'])}}<b></th>
 								<th></th>
 								<th></th>
 							</tr>
@@ -85,10 +85,10 @@
 						@foreach($invoices as $invoice)
 						<tr>
 							<td>{{$invoice->invoice_no}}</td>
-							<td>${{number_format($invoice->sub_total, 2)}}</td>
-							<td>${{$invoice->discount}}</td>
-							<td>${{number_format($invoice->tax_amount, 2)}}</td>
-							<td>${{number_format($invoice->total_amount, 2)}}</td>
+							<td>Tk {{number_format($invoice->sub_total, 2)}}</td>
+							<td>Tk {{$invoice->discount}}</td>
+							<td>Tk {{number_format($invoice->tax_amount, 2)}}</td>
+							<td>Tk {{number_format($invoice->total_amount, 2)}}</td>
 							<td>{{$invoice->user->name}}</td>
 							<td>{{$invoice->created_at}}</td>
 						</tr>
@@ -96,10 +96,10 @@
 
 						<tr>
 							<td><b>Total:</b></td>
-							<td>${{number_format($total['sub_total'], 2)}}</td>
-							<td>${{$total['discount']}}</td>
-							<td>${{number_format($total['tax_amount'], 2)}}</td>
-							<td>${{number_format($total['total_amount'])}}</b></td>
+							<td>Tk {{number_format($total['sub_total'], 2)}}</td>
+							<td>Tk {{$total['discount']}}</td>
+							<td>Tk {{number_format($total['tax_amount'], 2)}}</td>
+							<td>Tk {{number_format($total['total_amount'])}}</b></td>
 							<td></td>
 							<td></td>
 						</tr>

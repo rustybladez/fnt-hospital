@@ -19,8 +19,8 @@ class ServiceController extends Controller
     public function getIndex()
     {
         $services = Service::get();
-        $departments = Department::select('id','name')->get();
-        return view('services.index', compact('services' , 'departments'));
+        $departments = Department::select('id', 'name')->get();
+        return view('services.index', compact('services', 'departments'));
         //
     }
     /**
@@ -31,14 +31,14 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-       
+
         $data = $request->all();
-        $this->validate($request, ['name'=>'required|unique:services', 'amount'=>'required|numeric' , 'department_id' => 'required']);
-         $tax = Hospital::first()->tax_percent;
-        if($request->with_tax) {
+        $this->validate($request, ['name' => 'required|unique:services', 'amount' => 'required|numeric', 'department_id' => 'required']);
+        $tax = Hospital::first()->tax_percent;
+        if ($request->with_tax) {
 
             $tax_cal = 100 + $tax;
-            $request['amount'] = $request->amount*100/$tax_cal;
+            $request['amount'] = $request->amount * 100 / $tax_cal;
         }
 
         Service::create($data);
@@ -55,20 +55,20 @@ class ServiceController extends Controller
      */
     public function edit(Request $request)
     {
-         $tax = Hospital::first()->tax_percent;
-        $this->validate($request, ['name'=>'required','amount'=>'required|numeric' , 'department_id' => 'required|numeric']);
-        $data = Service::find ( $request->id );
+        $tax = Hospital::first()->tax_percent;
+        $this->validate($request, ['name' => 'required', 'amount' => 'required|numeric', 'department_id' => 'required|numeric']);
+        $data = Service::find($request->id);
         $data->name = ($request->name);
 
-        if($request->with_tax) {
+        if ($request->with_tax) {
 
             $tax_cal = 100 + $tax;
-            $request['amount'] = $request->amount*100/$tax_cal;
+            $request['amount'] = $request->amount * 100 / $tax_cal;
         }
 
         $data->amount = ($request->amount);
         $data->department_id = ($request->department_id);
-        $data->save ();
+        $data->save();
         return back()->with('success', 'Service Updated successfully');
         //
     }
@@ -82,17 +82,14 @@ class ServiceController extends Controller
     public function delete(Request $request)
     {
 
-      $service = Service::find($request->id); 
+        $service = Service::find($request->id);
 
-      if(count($service->service_sales) || count($service->tests)) {
+        if (count($service->service_sales) || count($service->tests)) {
 
-        return back()->with('error', 'Service cannot be deleted...');
-      } else {
+            return back()->with('error', 'Service cannot be deleted...');
+        } else {
             $service->delete();
             return back()->with('success', 'Service deleted successfully');
-      }
-      
-     
-    } 
-
+        }
+    }
 }
